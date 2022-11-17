@@ -1,0 +1,410 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.mainHeader {
+  background-color: $mainColor;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.headerWrapper {
+  position: relative;
+  &::after {
+    content: "";
+    background: url("Assets/headerpattern.png") repeat scroll 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 16px;
+    bottom: -8px;
+    z-index: 99;
+    animation: headerPattern 30s infinite linear;
+  }
+}
+
+@keyframes headerPattern {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 932px 0;
+  }
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+}
+
+
+  .navItem {
+    margin: 0 10px;
+    list-style: none;
+    position: relative;
+    background-color: transparent;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    @include flexrowcenter;
+    &:hover {
+      background-color: $secondaryColor;
+      .navLink {
+        color: #000 !important;
+        .arrowIcon {
+          color: #000 !important;
+        }
+      }
+      .promotionTitle {
+        color: #000 !important;
+      }
+    }
+    .navLink {
+      padding: 10px;
+      font-size: 17px;
+      display: inline-block;
+      cursor: pointer;
+      color: #fff;
+      font-family: "Oswald", sans-serif;
+      position: relative;
+      z-index: 2;
+    }
+    .arrowIcon {
+      font-size: 20px;
+      color: #fff;
+    }
+    .promotionTitle {
+      font-size: 12px;
+      color: $secondaryColor;
+      font-family: "Oswald", sans-serif;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 20px;
+      z-index: 0;
+    }
+  }
+
+
+.pizzaMenu {
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  padding: 20px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.juiceMenu {
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.burgerMenu {
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cartWrapperMenu {
+  position: relative;
+}
+
+.inProduct {
+  &::after {
+    content: "";
+    display: block;
+    height: 60px;
+  }
+}
+.cartMenu {
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  max-height: 500px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.5em;
+    height: 2em;
+    z-index: 99;
+    position: relative;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(187, 187, 187);
+    border-radius: 10px;
+    size: 1px;
+  }
+}
+.pizzaMenuInner {
+  @include flexrowbetween;
+  width: 100%;
+}
+.pizzaMenuList {
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+
+  .pizzaMenuTitle {
+    border-bottom: 1px solid #999;
+    color: #333;
+    letter-spacing: 1px;
+    font-weight: bold;
+
+    font-family: "Oswald", sans-serif;
+  }
+  .pizzaMenuItem {
+    list-style: none;
+    padding: 3px 0;
+
+    .pizzaMenuLink {
+      display: block;
+      color: #666;
+      padding-right: 30px;
+      &:hover {
+        color: #333 !important;
+      }
+    }
+  }
+}
+.pizzaMenuImg {
+  padding-top: 20px;
+  width: 500px;
+}
+.fastWrapper {
+  @include flexrowcenter;
+}
+.fastMenuInner {
+  @include flexcolcenter;
+  .fastFood {
+    @include flexrowcenter;
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+.fastFoodItem {
+  margin-right: 20px;
+}
+.fastFoodSlide {
+  width: 200px;
+  @include flexcolcenter;
+
+  cursor: pointer;
+  .sliderImg {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $mainColor;
+  }
+  .fastFoodTitle {
+    display: block !important;
+    font-size: 17px;
+    color: $mainColor;
+    font-family: "Oswald", sans-serif;
+  }
+}
+
+.rightIcon {
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: $secondaryColor !important;
+    transform: scaleX(-1);
+  }
+}
+.notLoginMenu {
+  width: 200px;
+}
+.searchIcon {
+  font-size: 20px;
+  color: $secondaryColor;
+}
+.searchMenu {
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  padding: 10px;
+  width: 260px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.personMenu {
+  background-color: #fff;
+  border-top: 5px solid $secondaryColor;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.personDefault {
+  padding: 10px;
+}
+.profileWrapper {
+  padding: 16px;
+  background-color: #a5311f21;
+  width: 260px;
+  .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .profileImg {
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 7px;
+  }
+  .personIcon {
+    font-size: 30px;
+    color: #a5311f21;
+  }
+  .profileName {
+    font-size: 17px;
+    color: #000;
+    font-family: $mainFont;
+  }
+  .profileMail {
+    font-size: 15px;
+    color: #333;
+    letter-spacing: 1px;
+    font-family: $mainFont;
+  }
+}
+.profileMenu {
+  padding-top: 10px;
+
+  .profileMenuItem {
+    list-style: none;
+    &:nth-child(2) {
+      margin-bottom: 10px;
+    }
+    .logoutLink {
+      border-top: 2px solid #efefef;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 15px;
+      color: #000;
+      display: block;
+      font-family: $mainFont;
+
+      &:hover {
+        color: $mainColor;
+      }
+    }
+    .logoutIcon {
+      margin-right: 2px;
+      color: $mainColor;
+    }
+    .profileLink {
+      font-family: $mainFont;
+      font-size: 15px;
+      display: block;
+      padding: 10px;
+      color: #000;
+      &:hover {
+        background-color: #a5311f21;
+      }
+    }
+  }
+}
+.rightIconWrapper {
+  display: block;
+  margin: 0 10px;
+  cursor: pointer;
+  position: relative;
+  .cartCount {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: $secondaryColor;
+    color: #000;
+    font-size: 15px;
+    padding: 2px 7px;
+    border-radius: 50%;
+    font-family: "Oswald", sans-serif;
+  }
+}
+.searchInput {
+  border: none;
+  outline: none;
+  width: 90%;
+  margin: 10px 0;
+}
+
+// SEARCH RESULTS
+
+.searchResult {
+  overflow: auto;
+  max-height: 450px;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.5em;
+    height: 2em;
+    z-index: 99;
+    position: relative;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(187, 187, 187);
+    border-radius: 10px;
+    size: 1px;
+  }
+
+  .searchResultList {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .searchResultLink {
+    @include flexrowcenter;
+    cursor: pointer;
+
+    .searchResultImg {
+      margin-right: 5px;
+      width: 80px;
+      .ResultImg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .searchResultItem {
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+  .searchResultInfo {
+    display: flex;
+    min-width: 150px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5px;
+  }
+}
+.shopCartItemPriceNew {
+  display: inline-block;
+  font-size: 15px;
+  color: $mainColor;
+  margin-right: 10px;
+  font-family: $mainFont;
+}
+.shopCartItemPriceOld {
+  font-family: $mainFont;
+  color: #666;
+  text-decoration: line-through;
+  font-size: 15px;
+}
+.searchResultName {
+  font-size: 15px;
+  color: #000;
+  font-family: $mainFont;
+}
+
+.navbarToggler{
+   margin-right: 10px;
+   font-size: 25px;
+   color: #fff;
+}
+// MOBILE MENU
+
+@media screen and (max-width:540px) {
+  .fastFoodSlide{
+    display: none;
+  }
+}

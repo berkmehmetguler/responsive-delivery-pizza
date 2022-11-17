@@ -1,0 +1,125 @@
+@import "../../../SCSS/Variables.scss";
+@import "../../../SCSS/Mixins.scss";
+
+.subscribe {
+  padding: 2rem 0;
+  background-color: #f6f6f7;
+}
+.subscribeWrapper {
+  @include flexcolcenter;
+}
+.subscribeIcon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.subscribeTitle {
+  font-family: $mainFont;
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 1rem 0;
+  text-align: center;
+}
+.subscribeText {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+}
+.subscribeForm {
+  width: 50%;
+}
+.subscribeInput {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border: 2px solid #efefef;
+  padding: 0 120px 0 20px;
+  font-size: 20px;
+  margin: 1rem 0;
+  color: $mainColor;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  border-radius: 25px;
+  &:focus {
+    border: 2px solid #000;
+  }
+}
+.subscribeButton {
+  width: 120px;
+  height: 50px;
+  border: none;
+  right: 0;
+  border-radius: 25px;
+  position: absolute;
+  background-color: #000;
+  font-size: 17px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  &:hover {
+    background-color: $secondaryColor !important;
+    color: #000;
+  }
+}
+
+.facebook {
+  @include subscribeIcon(#3b5998);
+}
+.twitter {
+  @include subscribeIcon(#00aced);
+}
+.instagram {
+  @include subscribeIcon(#e1306c);
+}
+.youtube {
+  @include subscribeIcon(#ff0000);
+}
+.rss {
+  @include subscribeIcon(#f26522);
+}
+.pinterest {
+  @include subscribeIcon(#bd081c);
+}
+.vimeo {
+  @include subscribeIcon(#1ab7ea);
+}
+
+@media screen and (max-width: 539.99px) {
+  .subscribeTitle {
+    font-size: 20px !important;
+  }
+  .subscribeInput {
+    font-size: 16px !important;
+   padding: 0 80px 0 20px;
+  }
+  .subscribeForm {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 279.99px) {
+  .subscribeButton {
+    width: 70px !important;
+    font-size: 15px !important;
+  }
+  .facebook {
+    @include phoneSocialIcon;
+  }
+  .twitter {
+    @include phoneSocialIcon;
+  }
+  .instagram {
+    @include phoneSocialIcon;
+  }
+  .youtube {
+    @include phoneSocialIcon;
+  }
+  .rss {
+    @include phoneSocialIcon;
+  }
+  .pinterest {
+    @include phoneSocialIcon;
+  }
+  .vimeo {
+    @include phoneSocialIcon;
+  }
+
+}
