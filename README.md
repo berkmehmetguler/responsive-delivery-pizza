@@ -1,5 +1,4 @@
 # Pizza Stop Fast Foods
-## Deploy https://pizzastop.netlify.app/
 
 ## Technologies 
 * REACT JS
